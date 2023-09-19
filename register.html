@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/signup.css">
+    <title>Register Account</title>
+  </head>
+  <body>
+    <h1>Register Account</h1>
+
+    <form action="register.php" method="post" novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="" id="name" name="name" />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email"/>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+      </div>
+
+      <div>
+        <label for="pass_confirm">Repeat Password</label>
+        <input type="password" id="password_confirm" name="password_confirm">
+      </div>
+
+      <button>Register Account</button>
+    </form>
+
+  </body>
+</html>

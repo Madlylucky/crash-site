@@ -1,0 +1,447 @@
+/* 
+
+    Style Sheet for INDEX.HTML
+
+    This project is for testing and learning CSS or HTML.
+
+*/
+
+/* Root SELECTORS */
+
+:root {
+
+    --color-gray: #4d4c4c;
+    --colour-dark: #222327;
+    --colour-lighter: #222327;
+    --colour-white: #fff;
+    --colour-main: #0b51ad;
+    --colour-2nd: #6767df;
+    --font-main: 'Montserrat', sans-serif;
+
+    --background-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    --animation-gradient: gradient 15s ease infinite;
+    
+}
+
+/* Background Animation */
+
+/* ============= Animation background ========= */
+.background {
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
+    z-index: 1;
+  }
+  .cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+  }
+  .cube:nth-child(2n) {
+    border-color: #FFF ;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+
+  /* Animate Background*/
+@keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes cube {
+    from {
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      transform: scale(20) rotate(960deg) translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+/* All Elemnts */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html {
+    background-color: var(--colour-dark);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--colour-dark);
+}
+
+
+/* Header Styling - Navigation Bar */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+    background-color: var(--colour-lighter);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: var(--colour-main);
+    font-size: 28px;
+    margin-right: 3px;
+}
+
+.logo span {
+    font-family: var(--font-main);
+    color: var(--colour-white);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: var(--colour-white);
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease;
+}
+
+.navbar a:hover {
+    color: var(--colour-main);
+}
+
+.navbar a.active {
+    color: var(--colour-main);
+    font-weight: 600;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    background-color: var(--colour-2nd);
+    padding: 2px;
+    border-radius: 15px;
+}
+
+.main a {
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--colour-white);
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: var(--font-main);
+    transition: all .50s ease;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user i{
+    color: var(--colour-white);
+    font-size: 35px;
+    margin-right: 7px;
+}
+
+.main a:hover {
+    color: var(--colour-dark);
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: var(--colour-white);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    header {
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        background-color: var(--colour-lighter);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+        
+    }
+
+    .navbar a:hover {
+        color: var(--colour-white);
+        transform: translateX(5px);
+        font-size: 1.3rem;
+    }
+    .navbar a.active {
+        color: var(--colour-main);
+        font-weight: 600;
+    }
+
+    .navbar.open {
+        right: 2%;
+    }
+}
+
+/* Page Contents - Wrapper */
+
+.wrapper {
+    position:absolute;
+    width: 100%;
+    top: 200px;
+    right: -50px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .title h1 {
+    color: var(--colour-white);
+    font-size: 100px;
+    font-family: var(--font-main);
+}
+
+@media (max-width: 1280px) {
+    .wrapper {
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .wrapper .title h1{
+        transition: all .50s ease;
+    }
+}
+
+@media (max-width: 900px) {
+    .wrapper .title h1{
+        font-size: 50px;
+        transition: all .50s ease;
+    }
+}
+
+/* Page Wrapper - Wrapper Contents */
+
+.wrapper-contents {
+    font-size: 20px;
+    position: absolute;
+    color: var(--colour-white);
+    font-family: var(--font-main);
+    padding-top: 150px;
+    overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+    .wrapper-contents {
+        transition: .2s;
+    }
+    .wrapper .title h1{
+        transition: all .50s ease;
+    }
+}
+
+@media (max-width: 900px) {
+    .wrapper-contents p{
+        font-size: 14px;
+        transition: all .50s ease;
+    }
+}
+
+/* Footer Styling */
+
+footer .container {
+    background-color: var(--colour-lighter);
+    margin: auto;
+    overflow: hidden;
+}
+
+footer {
+    background-color: var(--colour-dark);
+    padding: 70px 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--colour-2nd);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: var(--colour-white);
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-family: var(--font-main);
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--colour-main);
+    height: 2px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+
+}
+
+.footer-col ul li a{
+    font-family: var(--font-main);
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--colour-white);
+    font-weight: 300;
+    color: var(--color-gray);
+    display: block;
+    transition:  all .50s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--colour-2nd);
+    padding-left: 8px;
+    transition:  all .50s ease;
+}
+
+.footer-col .socials a i {
+    font-size: 30px;
+}
+
+.footer-col .socials a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--colour-dark);
+    margin: 0 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: var(--colour-white);
+    transition: all .50s ease;
+}
+
+.footer-col .socials a:hover{
+    color: var(--colour-2nd);
+    background-color: var(--colour-white);
+}
+
+/* Footer Responsive */
+
+@media(max-width: 900px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 400px) {
+    .footer-col {
+        width: 100%;
+    }
+}
