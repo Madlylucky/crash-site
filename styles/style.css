@@ -274,15 +274,13 @@ header {
 
 /* Page Contents - Wrapper */
 
-.box {
+.wrapper .wrapper-contents .box {
     opacity: 0;
-    position: fixed;
-    z-index: inherit;
+    position:absolute;
 }
 
 .b1 {
     animation: ani1 15s infinite;
-    position: absolute;
 }
 
 .b2 {
