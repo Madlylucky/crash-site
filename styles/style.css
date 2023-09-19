@@ -14,8 +14,8 @@
     --colour-dark: #222327;
     --colour-lighter: #222327;
     --colour-white: #fff;
-    --colour-main: #0b51ad;
-    --colour-2nd: #6767df;
+    --colour-main: #ad0b7c;
+    --colour-2nd: #f08740;
     --font-main: 'Montserrat', sans-serif;
 
     --background-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -27,7 +27,7 @@
 
 /* ============= Animation background ========= */
 .background {
-    background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+    background: linear-gradient(132deg, #fc41d3, #e29556, #493332);
     background-size: 400% 400%;
     animation: Gradient 15s ease infinite;
     position: relative;
@@ -139,10 +139,18 @@ header {
     background-color: var(--colour-lighter);
 }
 
+img {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+}
+
 .logo {
     display: flex;
     align-items: center;
 }
+
 
 .logo i {
     color: var(--colour-main);
@@ -183,7 +191,7 @@ header {
 .main {
     display: flex;
     align-items: center;
-    background-color: var(--colour-2nd);
+    background-color: var(--colour-main);
     padding: 2px;
     border-radius: 15px;
 }
@@ -430,6 +438,11 @@ header {
 
 /* Footer Styling */
 
+.footer .container h4 {
+    text-align: center;
+    align-items: center;
+}
+
 footer .container {
     background-color: var(--colour-lighter);
     margin: auto;
@@ -499,7 +512,7 @@ footer a {
 }
 
 .footer-col ul li a:hover {
-    color: var(--colour-2nd);
+    color: var(--colour-main);
     padding-left: 8px;
     transition:  all .50s ease;
 }
@@ -508,12 +521,13 @@ footer a {
     font-size: 30px;
 }
 
+
 .footer-col .socials a {
     display: inline-block;
     height: 40px;
     width: 40px;
     background-color: var(--colour-dark);
-    margin: 0 10px 0;
+    margin: 0 5px 5px;
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
@@ -522,9 +536,18 @@ footer a {
 }
 
 .footer-col .socials a:hover{
-    color: var(--colour-2nd);
+    color: var(--colour-main);
     background-color: var(--colour-white);
 }
+
+.small-print a{
+    text-align: center;
+    color: var(--color-gray);
+    text-decoration: underline;
+    padding: 15px;
+    font-family: var(--font-main);
+}
+
 
 /* Footer Responsive */
 
