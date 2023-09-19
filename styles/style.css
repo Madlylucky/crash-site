@@ -192,7 +192,7 @@ img {
     display: flex;
     align-items: center;
     background-color: var(--colour-main);
-    padding: 2px;
+    padding: 5px;
     border-radius: 15px;
 }
 
@@ -218,7 +218,8 @@ img {
 }
 
 .main a:hover {
-    color: var(--colour-dark);
+    color: var(--colour-white);
+    transform: translateY(5px)
 }
 
 #menu-icon {
@@ -248,7 +249,7 @@ img {
         position: absolute;
         top: 100%;
         right: -100%;
-        width: 270px;
+        width: 240px;
         background-color: var(--colour-lighter);
         display: flex;
         flex-direction: column;
@@ -267,7 +268,7 @@ img {
 
     .navbar a:hover {
         color: var(--colour-white);
-        transform: translateX(5px);
+        transform: translateX(2px);
         font-size: 1.3rem;
     }
     .navbar a.active {
@@ -379,7 +380,7 @@ img {
 
 .wrapper .title h1 {
     color: var(--colour-white);
-    font-size: 100px;
+    font-size: 80px;
     font-family: var(--font-main);
 }
 
@@ -418,15 +419,20 @@ img {
     .wrapper-contents {
         transition: .2s;
     }
+    }
     .wrapper .title h1{
         transition: all .50s ease;
     }
-}
+    .wrapper-contents p {
+        transition: .2s;
+        transition: all .50s ease;
+    }
 
 @media (max-width: 900px) {
-    .wrapper-contents p{
+    .wrapper-contents p {
         font-size: 14px;
         transition: all .50s ease;
+        transform: translateY(-25px);
     }
 }
 
