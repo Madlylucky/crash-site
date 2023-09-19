@@ -113,6 +113,7 @@
 
 html {
     background-color: var(--colour-dark);
+    overflow-x: hidden;
 }
 
 body {
@@ -331,6 +332,12 @@ header {
         font-size: 14px;
         transition: all .50s ease;
     }
+}
+
+
+.wrapper-contents p {
+    text-align: center;
+    overflow: hidden;
 }
 
 /* Footer Styling */
